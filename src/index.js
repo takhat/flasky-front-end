@@ -16,5 +16,5 @@ root.render(
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
 
-// Comment by Tapasya: 95% of the time we dont change this file.
+// Comment by Tapasya: 95% of the time we don't change this file.
 //as explained in class by Auberon

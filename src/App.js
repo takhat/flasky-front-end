@@ -7,7 +7,6 @@ function App() {
     <div>
       <h1>{name} Breakfast App</h1>
       <BreakfastList />
-      <BreakfastList />
     </div>
   );
 }
