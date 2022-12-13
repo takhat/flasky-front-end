@@ -1,19 +1,27 @@
 import Breakfast from "./Breakfast";
+import PropTypes from "prop-types";
 
-const BreakfastList = () => {
-  return (
-    <ul>
-      <li>
-        <Breakfast />
+const BreakfastList = ({ breakfastData }) => {
+  //const breakfastData = props.breakfastData;
+
+  const breakfastComponents = breakfastData.map((breakfast) => {
+    return (
+      <li key={breakfast.id}>
+        <Breakfast
+          name={breakfast.name}
+          description={breakfast.description}
+          prepTime={breakfast.prepTime}
+          rating={breakfast.rating}
+        />
       </li>
-      <li>
-        <Breakfast />
-      </li>
-      <li>
-        <Breakfast />
-      </li>
-    </ul>
-  );
+    );
+  });
+  //rating={breakfast.rating}
+  return <ul>{breakfastComponents}</ul>;
+};
+
+BreakfastList.propTypes = {
+  breakfastData: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 export default BreakfastList;

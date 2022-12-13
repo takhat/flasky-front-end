@@ -1,10 +1,11 @@
 import "./Breakfast.css";
+import propTypes from "prop-types";
 
-const Breakfast = () => {
-  const name = "Cereal";
-  const description = "It's tasty";
-  const prepTime = 2;
-  const rating = 5;
+const Breakfast = ({ name, description, prepTime, rating }) => {
+  // const name = props.name;
+  // const description = props.description;
+  // const prepTime = props.prepTime;
+  // const rating = props.rating;
 
   return (
     <div>
@@ -16,4 +17,10 @@ const Breakfast = () => {
   );
 };
 
+Breakfast.propTypes = {
+  name: propTypes.string.isRequired,
+  description: propTypes.string.isRequired,
+  prepTime: propTypes.number.isRequired,
+  rating: propTypes.number.isRequired,
+};
 export default Breakfast;
