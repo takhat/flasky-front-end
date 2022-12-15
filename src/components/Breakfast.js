@@ -1,11 +1,28 @@
 import "./Breakfast.css";
 import propTypes from "prop-types";
+import { useState } from "react";
 
-const Breakfast = ({ name, description, prepTime, rating }) => {
+const Breakfast = ({ name, description, prepTime }) => {
   // const name = props.name;
   // const description = props.description;
   // const prepTime = props.prepTime;
   // const rating = props.rating;
+
+  const [rating, setRating] = useState(0);
+  // const rating = useState[0];
+  // const setRating = useState[1];
+
+  const [breakfastName, setBreakfastName] = useState("");
+
+  const increaseRating = () => setRating(rating + 1);
+
+  const handleClick = () => {
+    increaseRating();
+    console.log("rating", rating);
+  };
+  const handleChange = (event) => {
+    setBreakfastName(event.target.value);
+  };
 
   return (
     <div>
@@ -13,6 +30,11 @@ const Breakfast = ({ name, description, prepTime, rating }) => {
       <p>{description}</p>
       <p className="emphasizedText">Prep time: {prepTime} minutes</p>
       <p className="emphasizedText">Rating: {rating} stars</p>
+      <p>Your {breakfastName} is cool.</p>
+      <form>
+        <input onChange={handleChange}></input>
+      </form>
+      <button onClick={handleClick}>Update Rating</button>
     </div>
   );
 };
